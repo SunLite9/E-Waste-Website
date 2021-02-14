@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {%load static%}
+    <title>About</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:700,300' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="col-sm-8" style="color:green; font-size: 27px">Make a Cleaner Tomorrow</h1>
+        <nav class="col-sm-4">
+          <p class="pill-white"><a style="color:green; font-size: 17px;text-decoration:none" href="{% url 'jumbotrontest' %}">Home</a></p>
+          <p class="pill-white"><a style="color:green; font-size: 17px;text-decoration:none" href="{% url 'aboutpage' %}">About</a></p>
+          <!--<p class="pill-white"><a style="text-decoration:none" href="{% url 'contactinfopage'%}">Contact</a></p>-->
+          <!--<p class="pill-white"><a href="{% url 'blogpage'%}">Blog</a></p>-->
+          <p class="pill-white"><a style="color:green; font-size: 17px;text-decoration:none" href="{% url 'schedulepage'%}">Schedule</a></p>
+        </nav>
+      </div>
+    </header>
+    <br>
+    <!--<center style="color:green; font-size: 23px; font-family:Roboto">About</center>-->
+    <br>
+    <div class="row">
+                <div class="col-sm-1"></div>
+                    <div class = "col-sm-4">
+                        <img src="{% static 'images/ewastestuff2.png'%}" alt="Computer Waste" width="460" height="437" >
+                    </div>
+
+      <div class="container">
+        <h1 style="color: Green; font-size: 23px; text-align:center; font-family:Roboto">About</h1>
+        <br>
+    <p style="font-size: 19px; text-align:center; font-family:Roboto;">
+    Make a Cleaner Tomorrow is a organization committed to create a safer and cleaner future. Our mission is to educate the public on the societal and environmental effects of e-waste and make a difference in fighting climate change by providing free e-waste pickup. Many of these electronic products are poorly recycled and cause environmental problems. We aim to lessen these effects by properly recycling these devices to be reused for other products and to save natural resources.
+    </p>
+      </div>
+
+<!--<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Cleaner Tomorrow About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"> </script>
+
+
+</head>
+
+<body style="background-color:#232020;">
+    <div class="container">
+
+
+<div class="jumbotron text-center">
+    <h1>Make a Cleaner Tomorrow</h1>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+        <li><a href="{% url 'homepage1'%}">Home</a></li>
+      <li><a href="{% url 'aboutpage' %}">About</a></li>
+      <li><a href="{% url 'contactinfopage'%}">Contact Info</a></li>
+        <!--<li><a href="{% url 'blogpage'%}">Blog</a></li>-->
+     <!--<li><a href="{% url 'schedulepage'%}">Schedule</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+
+<p>
+<center style="color:green; font-size: 40px; font-family:Helvetica">
+    About Us
+</center>
+<p>
+<center style="color:white; font-size: 18px; font-family:Helvetica">
+    Make a Cleaner Tomorrow is a organization founded by high school students who are looking to create a safer and cleaner future. Our mission is to educate the public on the societal and environmental effects of e-waste and make a difference in fighting climate change by providing free e-waste pickup. Many of these electronic products are poorly recycled and cause environmental problems. We aim to lessen these effects by properly recycling these devices to be reused for other products and to save natural resources.
+</center>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+
+</html>-->

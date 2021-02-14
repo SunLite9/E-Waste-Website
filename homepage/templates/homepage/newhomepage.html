@@ -1,0 +1,69 @@
+<html>
+  <head>
+    {%load static%}
+    <title>Make a Cleaner Tomorrow</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:700,300' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
+  </head>
+  <body>
+    <header class="container">
+      <div class="row">
+        <h1 class="col-sm-8" style="color:green; font-size: 27px">Make a Cleaner Tomorrow</h1>
+        <nav class="col-sm-4">
+          <p class="pill-white"><a style="color:green; font-size: 17px; text-decoration:none" href="{% url 'homepage1' %}">Home</a></p>
+          <p class="pill-white"><a style="color:green; font-size: 17px; text-decoration:none" href="{% url 'aboutpage' %}">About</a></p>
+          <!--<p class="pill-white"><a style="text-decoration:none" href="{% url 'contactinfopage'%}">Contact</a></p>-->
+          <!--<p class="pill-white"><a href="{% url 'blogpage'%}">Blog</a></p>-->
+          <p class="pill-white"><a style="color:green; font-size: 17px;text-decoration:none" href="{% url 'schedulepage'%}">Schedule</a></p>
+        </nav>
+      </div>
+    </header>
+    <section class="jumbotron" style="background-image: url('/static/images/ewasteworld.jpg');">
+      <div class="container">
+        <div class="row text-center">
+          <h2><a style="text-decoration:none; color:Blue" href="{% url 'schedulepage'%}">Schedule an Appointment</a></h2>
+        </div>
+      </div>
+    </section>
+            <div class="row">
+                <div class="col-sm-1"></div>
+                    <div class = "col-sm-4">
+                        <img src="{% static 'images/ewastebox1.png'%}" alt="Computer Waste" width="470" height="700" >
+                    </div>
+                    <div class = "col-cm-7">
+                        <h1 style="color:green; font-size: 20px; font-family:Roboto">
+                            What is E-Waste?
+                        </h1>
+                        <p style="color:black; font-size: 19px; font-family:Roboto">
+                            E-waste or electronic waste are unwanted or not working electronic products that are no longer useful. Electronic items that are not needed should be recycled.
+                        </p>
+                        <hr>
+                        <h1 style="color:green; font-size: 20px; font-family:Roboto">
+                            Why Recycle E-Waste?
+                        </h1>
+                        <p style="color:black; font-size: 19px; font-family:Roboto">
+                        Most electronics contain toxic materials that are harmful for the environment. Certain materials in these items could be used again to produce new products. This means that fewer raw materials have to be refined. By recycling e-waste, we could save more time, money, and energy and cause less pollution.
+                        </p>
+                        <hr>
+                        <h1 style="color:green; font-size: 20px; font-family:Roboto">
+                                Common E-Waste Items
+                                </h1>
+                                  <ul style="color:black; font-size: 19px; font-family:Roboto">
+                                            <li>VCRs</li>
+                                            <li>Stereos</li>
+                                            <li>Computers</li>
+                                            <li>Printers</li>
+                                            <li>Consoles</li>
+                                            <li>Monitors</li>
+                                            <li>Cell Phones</li>
+                                            <li>DVD Players</li>
+                                            <li>Televisions</li>
+                                            <li>Wires/cords</li>
+                                        </ul>
+                    </div>
+                </div>
+
+
+  </body>
+</html>
