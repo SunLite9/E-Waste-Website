@@ -31,7 +31,6 @@ urlpatterns = [
     path('blog/', blog.views.blog, name = 'blogpage'),
     path('bookappointment/', schedule.views.bookappointment, name='bookappointment'),
     path('', homepage.views.jumbotrontest, name='jumbotrontest')
-
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

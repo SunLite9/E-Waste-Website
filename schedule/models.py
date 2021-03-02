@@ -10,7 +10,7 @@ class BookAppointment(models.Model):
     description = models.TextField()
     pickupdate = models.DateField(null=True)
     pickuptime = models.TimeField(null=True)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=True, upload_to="images/")
     booked_date = models.DateTimeField(default=datetime.now(), null=True)
     #Needs custom logic
     #scheduled_date =

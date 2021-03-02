@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from .models import BookAppointment
-from django.core.mail import send_mail
+from django.core.mail import send_mail, EmailMessage
 
 # Create your views here.
 
@@ -31,25 +31,33 @@ def bookappointment(request):
         image = image,
     )
     sendemail(request)
-    return render(request, 'schedule/schedule_page.html')
+    return redirect('schedulepage')
 
+
+# def sendemail2(request):
+#     send_mail(
+#         subject = f'{request.POST.get("username")}    {request.POST.get("pickupdate")}',
+#         message = 'Name: {request.POST.get("username")}
+# Email: {request.POST.get("email")}
+# Phone Number: {request.POST.get("phonenumber")}
+# Address: {request.POST.get("address")}
+# Description: {request.POST.get("description")}
+# Pickup Date: {request.POST.get("pickupdate")}
+# Pickup Time: {request.POST.get("pickuptime")}
+# Images: {request.FILES.get("image")},
+#         from_email = "sunlite991@gmail.com",
+#         recipient_list = ["makeacleanertomorrow@gmail.com", "ravikiran03.m@gmail.com"],
+#         fail_silently = False
+#
+#     )
 
 def sendemail(request):
-    send_mail(
-        subject = f'{request.POST.get("username")}    {request.POST.get("pickupdate")}',
-        message = f'''Name: {request.POST.get("username")}
-Email: {request.POST.get("email")}
-Phone Number: {request.POST.get("phonenumber")}
-Address: {request.POST.get("address")}
-Description: {request.POST.get("description")}
-Pickup Date: {request.POST.get("pickupdate")}
-Pickup Time: {request.POST.get("pickuptime")}
-Images: {request.FILES.get("image")}
-''',
-        from_email = "sunlite991@gmail.com",
-        recipient_list = ["makeacleanertomorrow@gmail.com", "ravikiran03.m@gmail.com"],
-        fail_silently = False
-
+    email= EmailMessage(
+        subject='new booking',
+        body=f'new booking from {request.POST.get("username")}',
+        to= ["makeacleanertomorrow@gmail.com", "ravikiran03.m@gmail.com", "satyarth.shankar@gmail.com"]
     )
-
+    image=request.FILES['image']
+    email.attach('user image', image.read(), image.content_type)
+    email.send()
 

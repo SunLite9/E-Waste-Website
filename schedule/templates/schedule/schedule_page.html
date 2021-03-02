@@ -6,6 +6,53 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:700,300' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css'%}"/>
+      <style>
+    textarea {
+	resize: none;
+}
+.form-label {
+	font-size: 12px;
+	color: #5e9bfc;
+	margin: 0;
+	display: block;
+	opacity: 1;
+	-webkit-transition: .333s ease top, .333s ease opacity;
+	transition: .333s ease top, .333s ease opacity;
+}
+.form-control {
+	border-radius: 0;
+	border-color: #ccc;
+   	border-width: 0 0 2px 0;
+   	border-style: none none solid none;
+   	box-shadow: none;
+}
+.form-control:focus {
+	box-shadow: none;
+	border-color: #5e9bfc;
+}
+.js-hide-label {
+	opacity: 0;
+}
+.js-unhighlight-label {
+	color: #999
+}
+.btn-start-order {
+	background: 0 0 #ffffff;
+    border: 1px solid #2f323a;
+    border-radius: 3px;
+    color: #2f323a;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: inherit;
+    margin: 30px 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    transition: all 0.25s ease 0s;
+}
+.btn-start-order:hover,.btn-start-order:active, .btn-start-order:focus {
+	border-color: #5e9bfc;
+	color: #5e9bfc;
+}</style>
   </head>
   <body>
     <header class="container">
@@ -23,55 +70,103 @@
 <p>
 <center style="color:green; font-size: 23px; font-family:Roboto">
     Schedule
-</center>
 <p>
-<p style="font-size: 20px; font-family:Roboto">
+<p style="color:black; font-size: 19px; font-family:Roboto">
+                Contact us to book a free pick up now
+                </p>
+        <!--<p style="color:black; font-size: 16px; font-family:Roboto">
     Ravikiran Madichetty
-</p>
-<p style=" font-size: 18px; font-family:Roboto">Phone Number: (669)-274-5141
-</p>
-<p style="font-size: 18px; font-family:Roboto">Email: makeacleanertomorrow@gmail.com</p>
-<p style="font-size: 18px; font-family:Roboto"> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ravikiran03.m@gmail.com</p>
 
+</p>-->
 
-        <div>
-                    <form method ="post" action="{% url 'bookappointment'%}" enctype="multipart/form-data">
-                        {% csrf_token %}
-                      <div class="form-group">
-                        <label for="username">Name:</label>
-                        <input name="username" type="text" class="form-control" id="username" placeholder="Name" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input name="email" type="email" class="form-control" id="email" placeholder="Email Address" required>
-                      </div>
-                        <div class="form-group">
-                        <label for="phonenumber">Phone Number:</label>
-                        <input name="phonenumber" type="text" class="form-control" id="phonenumber" placeholder="Phone Number" required>
-                      </div>
-                        <div class="form-group">
-                        <label for="address">Address:</label>
-                        <input name="address" type="text" class="form-control" id="address" placeholder="Address" required>
-                      </div>
-                      <div class="form-group">
-                        <label for="description">Description:</label>
-                        <input name="description" type="text" class="form-control" id="description" placeholder="Description" required>
-                      </div>
-                      <div class="form-group">
-                            <label for="pickupdate">Pickup Date:</label>
+<p style="color:black; font-size: 15px; font-family:Roboto">makeacleanertomorrow@gmail.com</p>
+        <p style="color:black; font-size: 15px; font-family:Roboto">(669)-274-5141
+</p>
+<!--<p style="color:black; font-size: 15px; font-family:Roboto">ravikiran03.m@gmail.com</p>-->
+<hr>
+        <div class="container">
+  <div class="row">
+
+  </div>
+  <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2">
+          <form id="contact-form" class="form" action="{% url 'bookappointment'%}" method="POST" role="form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="form-group">
+
+                  <input type="text" class="form-control" id="name" name="username" placeholder="Your name" tabindex="1" required>
+              </div>
+              <div class="form-group">
+
+                  <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2" required>
+              </div>
+              <div class="form-group">
+
+                  <input type="text" class="form-control" id="phonenumber" name="phonenumber" placeholder="Your Phone Number" tabindex="3">
+              </div>
+              <div class="form-group">
+                  <input name="address" type="text" class="form-control" id="address" placeholder="Address" required>
+              </div>
+              <div class="form-group">
+
+                  <input name="description" class="form-control" id="description" placeholder="Description of Item(s)" tabindex="4" required>
+              </div>
+              <div class="form-group">
                             <input id="pickupdate" name="pickupdate" type="date" class="form-control" placeholder="Pickup Date" required>
-                      </div>
+                 </div>
+                    <div class="form-group">
+                         <input id="pickuptime" name="pickuptime" type="time" class="form-control" placeholder="Pickup Time" required>
+                     </div>
                       <div class="form-group">
-                            <label for="pickuptime">Pickup Time:</label>
-                            <input id="pickuptime" name="pickuptime" type="time" class="form-control" placeholder="Pickup Time" required>
+
+                      <input name="image" type="file" class="form-control" id="image" placeholder="Images" accept="image/*">
                       </div>
-                      <div class="form-group">
-                        <label for="image">Images:</label>
-                        <input name="image" type="file" class="form-control" id="image" placeholder="Images" multiple>
-                      </div>
-                      <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                </div>
+              <div class="text-center">
+                  <button type="submit" class="btn btn-start-order">Send Message</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<!--        <div>-->
+<!--                    <form method ="post" action="{% url 'bookappointment'%}" enctype="multipart/form-data">-->
+<!--                        {% csrf_token %}-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="username">Name:</label>-->
+<!--                        <input name="username" type="text" class="form-control" id="username" placeholder="Name" required>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="email">Email Address:</label>-->
+<!--                        <input name="email" type="email" class="form-control" id="email" placeholder="Email Address" required>-->
+<!--                      </div>-->
+<!--                        <div class="form-group">-->
+<!--                        <label for="phonenumber">Phone Number:</label>-->
+<!--                        <input name="phonenumber" type="text" class="form-control" id="phonenumber" placeholder="Phone Number" required>-->
+<!--                      </div>-->
+<!--                        <div class="form-group">-->
+<!--                        <label for="address">Address:</label>-->
+<!--                        <input name="address" type="text" class="form-control" id="address" placeholder="Address" required>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="description">Description:</label>-->
+<!--                        <input name="description" type="text" class="form-control" id="description" placeholder="Description" required>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                            <label for="pickupdate">Pickup Date:</label>-->
+<!--                            <input id="pickupdate" name="pickupdate" type="date" class="form-control" placeholder="Pickup Date" required>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                            <label for="pickuptime">Pickup Time:</label>-->
+<!--                            <input id="pickuptime" name="pickuptime" type="time" class="form-control" placeholder="Pickup Time" required>-->
+<!--                      </div>-->
+<!--                      <div class="form-group">-->
+<!--                        <label for="image">Images:</label>-->
+<!--                        <input name="image" type="file" class="form-control" id="image" placeholder="Images" multiple>-->
+<!--                      </div>-->
+<!--                      <button type="submit" class="btn btn-default">Submit</button>-->
+<!--                    </form>-->
+<!--                </div>-->
         <!--<html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -152,5 +247,69 @@
 
 </div>-->
     </header>
+  <script>
+      $(document).ready(function() {
+	// Test for placeholder support
+    $.support.placeholder = (function(){
+        var i = document.createElement('input');
+        return 'placeholder' in i;
+    })();
+
+    // Hide labels by default if placeholders are supported
+    if($.support.placeholder) {
+        $('.form-label').each(function(){
+            $(this).addClass('js-hide-label');
+        });
+
+        // Code for adding/removing classes here
+        $('.form-group').find('input, textarea').on('keyup blur focus', function(e){
+
+            // Cache our selectors
+            var $this = $(this),
+                $label = $this.parent().find("label");
+
+						switch(e.type) {
+							case 'keyup': {
+								 $label.toggleClass('js-hide-label', $this.val() == '');
+							} break;
+							case 'blur': {
+								if( $this.val() == '' ) {
+                    $label.addClass('js-hide-label');
+                } else {
+                    $label.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                }
+							} break;
+							case 'focus': {
+								if( $this.val() !== '' ) {
+                    $label.removeClass('js-unhighlight-label');
+                }
+							} break;
+							default: break;
+						}
+						// previous implementation with ifs
+            /*if (e.type == 'keyup') {
+                if( $this.val() == '' ) {
+                    $parent.addClass('js-hide-label');
+                } else {
+                    $parent.removeClass('js-hide-label');
+                }
+            }
+            else if (e.type == 'blur') {
+                if( $this.val() == '' ) {
+                    $parent.addClass('js-hide-label');
+                }
+                else {
+                    $parent.removeClass('js-hide-label').addClass('js-unhighlight-label');
+                }
+            }
+            else if (e.type == 'focus') {
+                if( $this.val() !== '' ) {
+                    $parent.removeClass('js-unhighlight-label');
+                }
+            }*/
+        });
+    }
+});
+  </script>
   </body>
 </html>
